@@ -1,0 +1,85 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.App {
+  text-align: center;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.App-header {
+  background-color: #007bff;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px 10px 0 0;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.input-container {
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.input-container input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 60%;
+}
+
+.input-container button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-container button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: #dc3545;
+  margin-top: 1rem;
+}
+
+.weather-container {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.weather-container h2 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+.weather-container p {
+  margin: 0.5rem 0;
+}
