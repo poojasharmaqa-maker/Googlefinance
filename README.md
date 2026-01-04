@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# P/E Ratio Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple web application built with Streamlit that allows users to calculate the Price-to-Earnings (P/E) ratio for up to 10 publicly traded companies.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+-   Input up to 10 stock tickers, separated by commas.
+-   Calculates P/E ratios based on the 30-day average stock price and Trailing Twelve Months (TTM) diluted EPS.
+-   Displays the results in a clean, easy-to-read table.
+-   Provides a detailed explanation of the calculation methodology and data sources (Yahoo Finance).
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Running the Application
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+There are two recommended ways to run this application: using a standard Python environment or using Anaconda and Jupyter Notebook.
 
-### `npm test`
+### Option 1: Standard Python Environment
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**1. Create a Virtual Environment (Recommended)**
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+```
 
-### `npm run build`
+**2. Install Dependencies**
+```bash
+pip install -r pe_calculator/requirements.txt
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**3. Run the Streamlit App**
+```bash
+streamlit run pe_calculator/app.py
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Option 2: Using Anaconda and Jupyter Notebook
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**1. Create a Conda Environment**
+First, ensure you have Anaconda or Miniconda installed. Then, create a new environment for this project.
+```bash
+conda create --name pe-calculator python=3.9
+```
 
-### `npm run eject`
+**2. Activate the Environment**
+```bash
+conda activate pe-calculator
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**3. Install Dependencies**
+Install the required packages from the `requirements.txt` file.
+```bash
+pip install -r pe_calculator/requirements.txt
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**4. Install Jupyter Notebook**
+If you don't have it in your base environment, you'll need to install Jupyter.
+```bash
+conda install -c anaconda jupyter
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**5. Run the Application from a Jupyter Notebook**
+You can launch the Streamlit app directly from a Python script or a Jupyter Notebook. Create a new notebook (`.ipynb`) and add the following code to a cell:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```python
+import subprocess
 
-## Learn More
+# Path to your Streamlit app script
+app_path = "pe_calculator/app.py"
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Command to run the Streamlit app
+command = ["streamlit", "run", app_path]
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Start the Streamlit app as a subprocess
+process = subprocess.Popen(command)
 
-### Code Splitting
+# You can interact with the app in the browser window that opens.
+# To stop the app, interrupt the kernel in Jupyter.
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Now, run the cell. This will start the Streamlit server, and you can view the application by navigating to the local URL provided in the output (usually `http://localhost:8501`).
